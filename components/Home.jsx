@@ -27,7 +27,7 @@ export default async function Home(){
                 </div>
                 <div className="flex gap-2">
                     <RemoveBtn id={topic._id} />
-                    <Link href={"editTopic/"} className="text-green-400"><HiOutlinePencil /></Link>
+                    <Link href={`/topics/edit/${topic._id}`} className="text-green-400"><HiOutlinePencil /></Link>
                 </div>
             </div>
             ))}

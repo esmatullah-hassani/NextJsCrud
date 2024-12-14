@@ -9,10 +9,9 @@ export default function AddList(){
 
     const fetchTopic = async(e) => {
         e.preventDefault()
-        console.log(`${process.env.APP_URL}topics`);
 
         try {
-            const res = await fetch('api/topics',{
+            const res = await fetch('/api/topics',{
                 cash:"no-store",
                 method:"POST",
                 headers:{
