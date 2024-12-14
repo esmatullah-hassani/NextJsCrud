@@ -1,8 +1,10 @@
 import Link from "next/link";
+import RemoveBtn from './RemoveBtn'
+import { HiOutlinePencil } from "react-icons/hi";
 
 const getTopics = async () => {
     try {
-        const res = await fetch(process.env.APP_URL+'topics',{
+        const res = await fetch(process.env.APP_URL+'api/topics',{
             cash:"no-store",
         });
         if(!res.ok){
@@ -24,7 +26,8 @@ export default async function Home(){
                     <div>{topic.description}</div>
                 </div>
                 <div className="flex gap-2">
-                    <Link href={"editTopic/"}>edit</Link>
+                    <RemoveBtn id={topic._id} />
+                    <Link href={"editTopic/"} className="text-green-400"><HiOutlinePencil /></Link>
                 </div>
             </div>
             ))}
